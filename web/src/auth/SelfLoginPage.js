@@ -21,7 +21,7 @@ class SelfLoginPage extends React.Component {
   render() {
     return (
       <>
-        <LoginLeft {...this.props} />
+        <LoginLeft className="slide-in"{...this.props} />
         <LoginPage type={"login"} mode={"signin"} applicationName={authConfig.appName} {...this.props} />
       </>
     );
