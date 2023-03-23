@@ -971,6 +971,10 @@ export function renderLogo(application) {
     return null;
   }
 
+  if (application.logo === "") {
+    return null;
+  }
+
   if (application.homepageUrl !== "") {
     return (
       <a target="_blank" rel="noreferrer" href={application.homepageUrl}>

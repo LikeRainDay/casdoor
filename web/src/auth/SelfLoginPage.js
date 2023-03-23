@@ -14,12 +14,16 @@
 
 import React from "react";
 import LoginPage from "./LoginPage";
+import LoginLeft from "./LoginLeft";
 import {authConfig} from "./Auth";
 
 class SelfLoginPage extends React.Component {
   render() {
     return (
-      <LoginPage type={"login"} mode={"signin"} applicationName={authConfig.appName} {...this.props} />
+      <>
+        <LoginLeft {...this.props} />
+        <LoginPage type={"login"} mode={"signin"} applicationName={authConfig.appName} {...this.props} />
+      </>
     );
   }
 }

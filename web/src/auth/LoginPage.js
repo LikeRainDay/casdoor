@@ -375,7 +375,7 @@ class LoginPage extends React.Component {
     }
 
     if (application.enablePassword) {
-      let loginWidth = 320;
+      let loginWidth = 420;
       if (Setting.getLanguage() === "fr") {
         loginWidth += 20;
       } else if (Setting.getLanguage() === "es") {
@@ -456,7 +456,8 @@ class LoginPage extends React.Component {
               >
                 <Input
                   id="input"
-                  prefix={<UserOutlined className="site-form-item-icon" />}
+                  style={{height: 60, fontSize: "1.2rem"}}
+                  prefix={<UserOutlined style={{fontSize: "25px", color: "#cccfd6"}} className="site-form-item-icon" />}
                   placeholder={(this.state.loginMethod === "verificationCode") ? i18next.t("login:Email or phone") : i18next.t("login:username, Email or phone")}
                   disabled={!application.enablePassword}
                   onChange={e => {
@@ -494,7 +495,7 @@ class LoginPage extends React.Component {
             <Button
               type="primary"
               htmlType="submit"
-              style={{width: "100%", marginBottom: "5px"}}
+              style={{width: "100%", height: "60px", fontSize: "18px", marginBottom: "5px"}}
               disabled={!application.enablePassword}
             >
               {
@@ -760,7 +761,8 @@ class LoginPage extends React.Component {
             rules={[{required: true, message: i18next.t("login:Please input your password!")}]}
           >
             <Input.Password
-              prefix={<LockOutlined className="site-form-item-icon" />}
+              style={{height: 60, fontSize: "18px"}}
+              prefix={<LockOutlined style={{fontSize: "24px", color: "#cccfd6"}} className="site-form-item-icon" />}
               type="password"
               placeholder={i18next.t("general:Password")}
               disabled={!application.enablePassword}
@@ -803,7 +805,7 @@ class LoginPage extends React.Component {
     if (application.enableCodeSignin || application.enableWebAuthn) {
       return (
         <div>
-          <Tabs items={items} size={"small"} defaultActiveKey="password" onChange={(key) => {
+          <Tabs items={items} size={"large"} defaultActiveKey="password" onChange={(key) => {
             this.setState({loginMethod: key});
           }} centered>
           </Tabs>
@@ -844,9 +846,6 @@ class LoginPage extends React.Component {
         <div className="login-content" style={{margin: this.props.preview ?? this.parseOffset(application.formOffset)}}>
           {Setting.inIframe() || Setting.isMobile() ? null : <div dangerouslySetInnerHTML={{__html: application.formCss}} />}
           <div className="login-panel">
-            <div className="side-image" style={{display: application.formOffset !== 4 ? "none" : null}}>
-              <div dangerouslySetInnerHTML={{__html: application.formSideHtml}} />
-            </div>
             <div className="login-form">
               <div>
                 <div>

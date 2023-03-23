@@ -73,7 +73,7 @@ import {withTranslation} from "react-i18next";
 import SelectThemeBox from "./SelectThemeBox";
 import SessionListPage from "./SessionListPage";
 
-const {Header, Footer, Content} = Layout;
+const {Header, Content} = Layout;
 
 class App extends Component {
   constructor(props) {
@@ -616,13 +616,7 @@ class App extends Component {
     return (
       <React.Fragment>
         {!this.state.account ? null : <div style={{display: "none"}} id="CasdoorApplicationName" value={this.state.account.signupApplication} />}
-        <Footer id="footer" style={
-          {
-            textAlign: "center",
-          }
-        }>
-            Powered by <a target="_blank" href="https://casdoor.org" rel="noreferrer"><img style={{paddingBottom: "3px"}} height={"20px"} alt={"Casdoor"} src={this.state.logo} /></a>
-        </Footer>
+
       </React.Fragment>
     );
   }
