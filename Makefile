@@ -2,8 +2,8 @@
 # Image URL to use all building/pushing image targets
 REGISTRY ?= houshuai0816
 IMG ?= casdoor
-IMG_TAG ?=$(shell git --no-pager log -1 --format="%ad" --date=format:"%Y%m%d")-$(shell git describe --tags --always --dirty --abbrev=6)
-#IMG_TAG ?= latest
+#IMG_TAG ?=$(shell #git --no-pager log -1 --format="%ad" --date=format:"%Y%m%d")-$(shell git describe --tags --always --dirty --abbrev=6)
+IMG_TAG ?= latest
 NAMESPACE ?= casdoor
 APP ?= casdoor
 HOST ?= test.com
