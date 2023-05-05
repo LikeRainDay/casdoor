@@ -2,10 +2,9 @@ version: '3.1'
 services:
   casdoor:
     restart: always
+    network_mode: "host"
     image: houshuai0816/casdoor:latest
     entrypoint: /bin/sh -c './server --createDatabase=true'
-    ports:
-      - "8000:8000"
     environment:
       RUNNING_IN_DOCKER: "true"
     volumes:
